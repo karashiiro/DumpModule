@@ -1,7 +1,7 @@
 # DumpModule
 Build with `-G "Visual Studio 16 2019`.
 
-Requires administrative privileges.
+Requires administrative privileges in the majority of cases.
 
 ### Example
 ```
