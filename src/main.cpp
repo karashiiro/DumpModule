@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-MODULEENTRY32 GetModule(DWORD dwProcID, TCHAR *szModuleName) {
+MODULEENTRY32 GetModule(DWORD dwProcID, const char *szModuleName) {
     MODULEENTRY32 foundModule;
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, dwProcID);
     if (hSnapshot != INVALID_HANDLE_VALUE) {
@@ -35,7 +35,7 @@ int main() {
     std::cin >> moduleName;
 
     std::cout << "Dumping " << moduleName << "..." << std::endl;
-    auto module = GetModule(pid, (TCHAR*)moduleName.c_str());
+    auto module = GetModule(pid, moduleName.c_str());
     std::cout << "Module address: " << std::to_string((DWORD_PTR)module.modBaseAddr) << std::endl;
     std::cout << "Module size: " << std::to_string(module.modBaseSize) << std::endl;
 
