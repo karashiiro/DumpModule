@@ -30,12 +30,10 @@ int main() {
     int pid;
     std::cout << "Enter PID: ";
     std::cin >> pid;
-    std::cout << std::endl;
 
     std::string moduleName;
     std::cout << "Enter module name: ";
     std::cin >> moduleName;
-    std::cout << std::endl;
 
     std::cout << "Dumping " << moduleName << "..." << std::endl;
     auto module = GetModule(pid, (TCHAR*)moduleName.c_str());
