@@ -14,7 +14,6 @@ MODULEENTRY32 GetModule(DWORD dwProcID, TCHAR *szModuleName) {
         moduleEntry32.dwSize = sizeof(MODULEENTRY32);
         if (Module32First(hSnapshot, &moduleEntry32)) {
             do {
-                std::cout << moduleEntry32.szModule << std::endl;
                 if (_tcsicmp(moduleEntry32.szModule, szModuleName) == 0) {
                     foundModule = moduleEntry32;
                     break;
